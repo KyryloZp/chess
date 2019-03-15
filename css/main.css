@@ -1,30 +1,3 @@
-
-*::-webkit-input-placeholder {
-	color: #C3C3C3;
-	opacity: 1;
-}
-*:-moz-placeholder {
-	color: #C3C3C3;
-	opacity: 1;
-}
-*::-moz-placeholder {
-	color: #C3C3C3;
-	opacity: 1;
-}
-*:-ms-input-placeholder {
-	color: #C3C3C3;
-	opacity: 1;
-}
-
-body input:focus:required:invalid,
-body textarea:focus:required:invalid {
-	
-}
-body input:required:valid,
-body textarea:required:valid {
-	
-}
-
 html, body {
 	margin: 0;
 	padding: 0;
@@ -33,77 +6,149 @@ html, body {
 
 .main {
 	position: relative;
-	width: 1000px;
-	height: 1000px;
+	width: 400px;
+	height: 400px;
 	display: block;
 	margin: 20px auto;
 	border: 6px solid black;
-}
-
-.row {
-	width: 100%;
-	height: 12.5%;
-	position: relative;
+	background-color: white;
+	background-image: linear-gradient( 45deg,black 25%, transparent 25%, transparent 74%, black 75%, black), 
+	linear-gradient( 45deg,black 25%, transparent 25%, transparent 74%, black 75%, black);
+	background-size:100px 100px;
+	background-position: 0 0, 50px 50px;
 }
 
 .box_chess {
-	width: 12.5%;
-	height: 100%;
-	position: absolute;
-	display: block;
-}
-.box_chess:nth-child(1) {
-	left: 0;
-}
-.box_chess:nth-child(2) {
-	left: 125px;
-}
-.box_chess:nth-child(3) {
-	left: 250px;
-}
-.box_chess:nth-child(4) {
-	left: 375px;
-}
-.box_chess:nth-child(5) {
-	left: 500px;
-}
-.box_chess:nth-child(6) {
-	left: 625px;
-}
-.box_chess:nth-child(7) {
-	left: 750px;
-}
-.box_chess:nth-child(8) {
-	left: 875px;
+    width: 12.5%;
+    height: 12.5%;
+    position: absolute;
 }
 
-.row:nth-child(odd) .box_chess:nth-child(odd) {
-	background-color: #FECD72;
-}
-.row:nth-child(odd) .box_chess:nth-child(even) {
-	background-color: #815003;
-}
-
-.row:nth-child(1):nth-child(-n+4) .box_chess:nth-child(2n)::before, 
-.row:nth-child(2) .box_chess:nth-child(odd)::before,
-.row:nth-child(3) .box_chess:nth-child(2n)::before ,
-.row:nth-child(6) .box_chess:nth-child(odd)::before,
-.row:nth-child(7) .box_chess:nth-child(2n)::before,
-.row:nth-child(8) .box_chess:nth-child(odd)::before {
+.box_chess:nth-child(n+1):nth-child(-n+8):nth-child(even), 
+.box_chess:nth-child(n+9):nth-child(-n+16):nth-child(odd),
+.box_chess:nth-child(n+17):nth-child(-n+24):nth-child(2n),
+.box_chess:nth-child(n+41):nth-child(-n+48):nth-child(odd),
+.box_chess:nth-child(n+49):nth-child(-n+56):nth-child(2n),
+.box_chess:nth-child(n+57):nth-child(-n+64):nth-child(odd) {
 	content: "";
 	background-image: url(../img/black_chess.png);
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: 90px;
-	width: 100%;
-	height: 100%;
+}
+
+.box_chess:nth-child(n+1):nth-child(-n+8) {
+	top: 0px;
 	display: block;
-
+}
+.box_chess:nth-child(n+9):nth-child(-n+16) {
+	top: 50px;
+	display: block;
+}
+.box_chess:nth-child(n+17):nth-child(-n+24) {
+	top: 100px;
+	display: block;
+}
+.box_chess:nth-child(n+25):nth-child(-n+32) {
+	top: 150px;
+	display: block;
+}
+.box_chess:nth-child(n+33):nth-child(-n+40) {
+	top: 200px;
+	display: block;
+}
+.box_chess:nth-child(n+41):nth-child(-n+48) {
+	top: 250px;
+	display: block;
+}
+.box_chess:nth-child(n+49):nth-child(-n+56) {
+	top: 300px;
+	display: block;
+}
+.box_chess:nth-child(n+57):nth-child(-n+64) {
+	top: 350px;
+	display: block;
 }
 
-.row:nth-child(even) .box_chess:nth-child(odd) {
-	background-color: #815003;
+
+.box_chess:nth-child(1), 
+.box_chess:nth-child(9),
+.box_chess:nth-child(17),
+.box_chess:nth-child(25),
+.box_chess:nth-child(33),
+.box_chess:nth-child(41),
+.box_chess:nth-child(49),
+.box_chess:nth-child(57) {
+	left: 0;
 }
-.row:nth-child(even) .box_chess:nth-child(even) {
-	background-color: #FECD72;
+
+.box_chess:nth-child(2), 
+.box_chess:nth-child(10),
+.box_chess:nth-child(18),
+.box_chess:nth-child(26),
+.box_chess:nth-child(34),
+.box_chess:nth-child(42),
+.box_chess:nth-child(50),
+.box_chess:nth-child(58) {
+	left: 50px;
+}
+
+.box_chess:nth-child(3), 
+.box_chess:nth-child(11),
+.box_chess:nth-child(19),
+.box_chess:nth-child(27),
+.box_chess:nth-child(35),
+.box_chess:nth-child(43),
+.box_chess:nth-child(51),
+.box_chess:nth-child(59) {
+	left: 100px;
+}
+.box_chess:nth-child(4), 
+.box_chess:nth-child(12),
+.box_chess:nth-child(20),
+.box_chess:nth-child(28),
+.box_chess:nth-child(36),
+.box_chess:nth-child(44),
+.box_chess:nth-child(52),
+.box_chess:nth-child(60) {
+	left: 150px;
+}
+.box_chess:nth-child(5), 
+.box_chess:nth-child(13),
+.box_chess:nth-child(21),
+.box_chess:nth-child(29),
+.box_chess:nth-child(37),
+.box_chess:nth-child(45),
+.box_chess:nth-child(53),
+.box_chess:nth-child(61) {
+	left: 200px;
+}
+.box_chess:nth-child(6), 
+.box_chess:nth-child(14),
+.box_chess:nth-child(22),
+.box_chess:nth-child(30),
+.box_chess:nth-child(38),
+.box_chess:nth-child(46),
+.box_chess:nth-child(54),
+.box_chess:nth-child(62) {
+	left: 250px;
+}
+.box_chess:nth-child(7), 
+.box_chess:nth-child(15),
+.box_chess:nth-child(23),
+.box_chess:nth-child(31),
+.box_chess:nth-child(39),
+.box_chess:nth-child(47),
+.box_chess:nth-child(55),
+.box_chess:nth-child(63) {
+	left: 300px;
+}
+.box_chess:nth-child(8), 
+.box_chess:nth-child(16),
+.box_chess:nth-child(24),
+.box_chess:nth-child(32),
+.box_chess:nth-child(40),
+.box_chess:nth-child(48),
+.box_chess:nth-child(56),
+.box_chess:nth-child(64) {
+	left: 350px;
 }
